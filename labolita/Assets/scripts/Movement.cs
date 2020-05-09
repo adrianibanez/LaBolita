@@ -25,16 +25,28 @@ public class Movement : MonoBehaviour
         {
             transform.position += transform.TransformDirection(Vector3.forward) * Time.deltaTime * movementSpeed;
         }
+        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey("s"))
+        {
+            transform.position -= transform.TransformDirection(Vector3.forward) * Time.deltaTime * movementSpeed * 2.5f;
+        }
         else if (Input.GetKey("s"))
         {
             transform.position -= transform.TransformDirection(Vector3.forward) * Time.deltaTime * movementSpeed;
         }
 
-        if (Input.GetKey("a") && !Input.GetKey("d"))
+        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey("a"))
+        {
+            transform.position += transform.TransformDirection(Vector3.left) * Time.deltaTime * movementSpeed * 2.5f;
+        }
+        else if (Input.GetKey("a") && !Input.GetKey(KeyCode.LeftShift))
         {
             transform.position += transform.TransformDirection(Vector3.left) * Time.deltaTime * movementSpeed;
         }
-        else if (Input.GetKey("d") && !Input.GetKey("a"))
+        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey("d"))
+        {
+            transform.position -= transform.TransformDirection(Vector3.left) * Time.deltaTime * movementSpeed * 2.5f;
+        }
+        else if (Input.GetKey("d"))
         {
             transform.position -= transform.TransformDirection(Vector3.left) * Time.deltaTime * movementSpeed;
         }
